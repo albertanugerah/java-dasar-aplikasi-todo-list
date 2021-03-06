@@ -5,7 +5,7 @@ public class AplikasiTodoList {
     public static java.util.Scanner scanner = new java.util.Scanner(System.in);
 
     public static void main(String[] args) {
-        testInput();
+        testViewShowTodoList();
 
 
     }
@@ -17,6 +17,7 @@ public class AplikasiTodoList {
      */
 
     public static void showTodoList() {
+        System.out.println("To-Do List");
         //tambahkan ke posisi yang data array nya NUll
         for (int i = 0; i < data.length; i++) {
             var todo = data[i];
@@ -170,6 +171,16 @@ public class AplikasiTodoList {
             }
         }
 
+    }
+
+    public static void testViewShowTodoList(){
+        addTodoList("Satu");
+        addTodoList("Dua");
+        addTodoList("Tiga");
+        addTodoList("Empat");
+        addTodoList("Lima");
+
+        viewShowTodoList();
     }
 
     /**
