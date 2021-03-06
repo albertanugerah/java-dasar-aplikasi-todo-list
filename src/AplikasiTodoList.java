@@ -6,4 +6,33 @@ public class AplikasiTodoList {
 
 
     }
+
+//business logic
+
+    /**
+     * menampilkan todo list
+     */
+
+    public static void showTodoList(){
+
+    }
+
+    /**
+     * menambah todo ke list
+     */
+
+    private static void addTodoList(){
+
+    }
+
+    /**
+     * menghapus todo dari list
+     */
+
+    public static void removeTodoList(){
+
+    }
+
+
+
 }
