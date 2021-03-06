@@ -3,7 +3,7 @@ public class AplikasiTodoList {
     public static String[] data = new String[10];
 
     public static void main(String[] args) {
-        testAddTodoList();
+        testRemoveTodoList();
 
 
     }
@@ -92,9 +92,39 @@ public class AplikasiTodoList {
         } else if (data[number - 1] == null) {
             return false;
         } else {
-            data[number - 1] = null;
+
+            for (int i = (number - 1); i < data.length; i++) {
+                if(i == (data.length - 1)){
+                    data[i] = null;
+                }else {
+                    data[i] = data[i+1];
+                }
+            }
             return true;
         }
+    }
+
+    public static void testRemoveTodoList(){
+        //dummy tambah data
+        addTodoList("Satu");
+        addTodoList("Dua");
+        addTodoList("Tiga");
+        addTodoList("Empat");
+        addTodoList("Lima");
+
+        //coba hapus data ke 20, karena diset 10;
+        var result = removeTodoList(20);
+        System.out.println(result);
+
+        //coba hapus data ke 4
+        result = removeTodoList(7);
+        System.out.println(result);
+
+        //coba hapus data ke 2
+        result = removeTodoList(2);
+        System.out.println(result);
+
+        showTodoList();
     }
 
 // view
