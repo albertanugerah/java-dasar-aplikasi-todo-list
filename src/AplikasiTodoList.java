@@ -38,8 +38,35 @@ public class AplikasiTodoList {
      * menambah todo ke list
      */
 
-    private static void addTodoList(){
+    private static void addTodoList(String todo){
+        var isFull = true;
+        // cek apakah data penuh
+        for (int i = 0; i < data.length; i++) {
+            if(data[i] == null){
+                //model masiha ada yang kosong
+                isFull = false;
+                break;
+            }
+        }
 
+        //jika penuh kita resize ukuran array 2x lipat
+        if(isFull){
+            //penampung data lama
+            var temp = data;
+            data = new String[data.length * 2];
+
+            for (int i = 0; i < temp.length; i++) {
+                data[i] = temp[i];
+            }
+        }
+
+        //tambahkan ke posisi yang data array nya NULL
+        for (int i = 0; i < data.length; i++) {
+            if (data[i] == null){
+                data[i] = todo;
+                break;
+            }
+        }
     }
 
     /**
