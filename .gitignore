@@ -1,0 +1,10 @@
+# Default ignored files
+.idea
+/shelf/
+/.idea/workspace.xml
+# Datasource local storage ignored files
+/../../../../../../../../../:\Users\hasud\OneDrive\Desktop\Coding\Java\java-dasar-aplikasi-todo-list\.idea/dataSources/
+/dataSources.local.xml
+# Editor-based HTTP Client requests
+/httpRequests/
+java-dasar-aplikasi-todo-list.iml
