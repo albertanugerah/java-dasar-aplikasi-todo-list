@@ -33,6 +33,31 @@ public class AplikasiTodoList {
 
     }
 
+// view
+
+    /**
+     * tampil show todo list
+     */
+    public static void viewShowTodoList(){
+
+    }
+
+    /**
+     * tampil view todo list
+     */
+    public static void viewAddTodoList(){
+
+    }
+
+    /**
+     * view delete todo list
+     */
+
+    public static void viewRemoveTodoList(){
+
+
+    }
+
 
 
 }
