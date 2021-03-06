@@ -14,21 +14,21 @@ public class AplikasiTodoList {
      * menampilkan todo list
      */
 
-    public static void showTodoList(){
+    public static void showTodoList() {
         //tambahkan ke posisi yang data array nya NUll
         for (int i = 0; i < data.length; i++) {
             var todo = data[i];
-            var no = i +1;
+            var no = i + 1;
 
             //check data
-            if(todo != null){
+            if (todo != null) {
                 System.out.println(no + ". " + todo);
             }
 
         }
     }
 
-    public static void testShowTodoList(){
+    public static void testShowTodoList() {
         data[0] = "albert";
         data[1] = "studi kasus java dasar : membuat aplikasi todo list";
         showTodoList();
@@ -38,11 +38,11 @@ public class AplikasiTodoList {
      * menambah todo ke list
      */
 
-    private static void addTodoList(String todo){
+    private static void addTodoList(String todo) {
         var isFull = true;
         // cek apakah data penuh
         for (int i = 0; i < data.length; i++) {
-            if(data[i] == null){
+            if (data[i] == null) {
                 //model masiha ada yang kosong
                 isFull = false;
                 break;
@@ -50,7 +50,7 @@ public class AplikasiTodoList {
         }
 
         //jika penuh kita resize ukuran array 2x lipat
-        if(isFull){
+        if (isFull) {
             //penampung data lama
             var temp = data;
             data = new String[data.length * 2];
@@ -62,7 +62,7 @@ public class AplikasiTodoList {
 
         //tambahkan ke posisi yang data array nya NULL
         for (int i = 0; i < data.length; i++) {
-            if (data[i] == null){
+            if (data[i] == null) {
                 data[i] = todo;
                 break;
             }
@@ -72,7 +72,7 @@ public class AplikasiTodoList {
     /**
      * Test add todo list
      */
-    public static void testAddTodoList(){
+    public static void testAddTodoList() {
 
         for (int i = 0; i < 25; i++) {
             addTodoList("Contoh todo ke " + i);
@@ -85,8 +85,16 @@ public class AplikasiTodoList {
      * menghapus todo dari list
      */
 
-    public static void removeTodoList(){
-
+    public static boolean removeTodoList(Integer number) {
+        //cek number > panjang data
+        if ((number - 1) >= data.length) {
+            return false;
+        } else if (data[number - 1] == null) {
+            return false;
+        } else {
+            data[number - 1] = null;
+            return true;
+        }
     }
 
 // view
@@ -94,14 +102,14 @@ public class AplikasiTodoList {
     /**
      * tampil show todo list
      */
-    public static void viewShowTodoList(){
+    public static void viewShowTodoList() {
 
     }
 
     /**
      * tampil view todo list
      */
-    public static void viewAddTodoList(){
+    public static void viewAddTodoList() {
 
     }
 
@@ -109,11 +117,10 @@ public class AplikasiTodoList {
      * view delete todo list
      */
 
-    public static void viewRemoveTodoList(){
+    public static void viewRemoveTodoList() {
 
 
     }
-
 
 
 }
