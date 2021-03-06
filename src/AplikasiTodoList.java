@@ -3,6 +3,7 @@ public class AplikasiTodoList {
     public static String[] data = new String[10];
 
     public static void main(String[] args) {
+        testShowTodoList();
 
 
     }
@@ -25,6 +26,12 @@ public class AplikasiTodoList {
             }
 
         }
+    }
+
+    public static void testShowTodoList(){
+        data[0] = "albert";
+        data[1] = "studi kasus java dasar : membuat aplikasi todo list";
+        showTodoList();
     }
 
     /**
