@@ -5,9 +5,7 @@ public class AplikasiTodoList {
     public static java.util.Scanner scanner = new java.util.Scanner(System.in);
 
     public static void main(String[] args) {
-        testViewAddTodoList();
-
-
+        testViewRemoveTodoList();
     }
 
 //business logic
@@ -144,7 +142,6 @@ public class AplikasiTodoList {
         var channel = input("Channel");
         System.out.println(channel);
     }
-
 // view
 
     /**
@@ -227,8 +224,19 @@ public class AplikasiTodoList {
               System.out.println("Gagal Menghapus todo list : " + number);
           }
         }
+    }
 
+    public static void testViewRemoveTodoList(){
 
+        addTodoList("Satu");
+        addTodoList("Dua");
+        addTodoList("Tiga");
+
+        showTodoList();
+
+        viewRemoveTodoList();
+
+        showTodoList();
     }
 
 
