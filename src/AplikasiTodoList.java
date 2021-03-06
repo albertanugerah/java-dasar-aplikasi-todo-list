@@ -213,6 +213,20 @@ public class AplikasiTodoList {
      */
 
     public static void viewRemoveTodoList() {
+        System.out.println("MENGHAPUS TO-DO LIST");
+
+        var number = input("Nomor yang dihapus (x Jika Batal)");
+
+        //check button x
+        if(number.equals("x")){
+            //batal
+        }else{
+            //konversi dari String ke integer
+          boolean success = removeTodoList(Integer.valueOf(number));
+          if (!success){
+              System.out.println("Gagal Menghapus todo list : " + number);
+          }
+        }
 
 
     }
