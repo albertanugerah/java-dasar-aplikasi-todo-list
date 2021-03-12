@@ -1,6 +1,6 @@
 public class AplikasiTodoList {
 
-    public static String[] data = new String[10];
+    public static String[] model = new String[10];
 
     public static java.util.Scanner scanner = new java.util.Scanner(System.in);
 
@@ -16,12 +16,12 @@ public class AplikasiTodoList {
 
     public static void showTodoList() {
         System.out.println("To-Do List");
-        //tambahkan ke posisi yang data array nya NUll
-        for (int i = 0; i < data.length; i++) {
-            var todo = data[i];
+        //tambahkan ke posisi yang model array nya NUll
+        for (int i = 0; i < model.length; i++) {
+            var todo = model[i];
             var no = i + 1;
 
-            //check data
+            //check model
             if (todo != null) {
                 System.out.println(no + ". " + todo);
             }
@@ -30,8 +30,8 @@ public class AplikasiTodoList {
     }
 
     public static void testShowTodoList() {
-        data[0] = "albert";
-        data[1] = "studi kasus java dasar : membuat aplikasi todo list";
+        model[0] = "albert";
+        model[1] = "studi kasus java dasar : membuat aplikasi todo list";
         showTodoList();
     }
 
@@ -41,9 +41,9 @@ public class AplikasiTodoList {
 
     private static void addTodoList(String todo) {
         var isFull = true;
-        // cek apakah data penuh
-        for (int i = 0; i < data.length; i++) {
-            if (data[i] == null) {
+        // cek apakah model penuh
+        for (int i = 0; i < model.length; i++) {
+            if (model[i] == null) {
                 //model masiha ada yang kosong
                 isFull = false;
                 break;
@@ -52,19 +52,19 @@ public class AplikasiTodoList {
 
         //jika penuh kita resize ukuran array 2x lipat
         if (isFull) {
-            //penampung data lama
-            var temp = data;
-            data = new String[data.length * 2];
+            //penampung model lama
+            var temp = model;
+            model = new String[model.length * 2];
 
             for (int i = 0; i < temp.length; i++) {
-                data[i] = temp[i];
+                model[i] = temp[i];
             }
         }
 
-        //tambahkan ke posisi yang data array nya NULL
-        for (int i = 0; i < data.length; i++) {
-            if (data[i] == null) {
-                data[i] = todo;
+        //tambahkan ke posisi yang model array nya NULL
+        for (int i = 0; i < model.length; i++) {
+            if (model[i] == null) {
+                model[i] = todo;
                 break;
             }
         }
@@ -87,18 +87,18 @@ public class AplikasiTodoList {
      */
 
     public static boolean removeTodoList(Integer number) {
-        //cek number > panjang data
-        if ((number - 1) >= data.length) {
+        //cek number > panjang model
+        if ((number - 1) >= model.length) {
             return false;
-        } else if (data[number - 1] == null) {
+        } else if (model[number - 1] == null) {
             return false;
         } else {
 
-            for (int i = (number - 1); i < data.length; i++) {
-                if(i == (data.length - 1)){
-                    data[i] = null;
+            for (int i = (number - 1); i < model.length; i++) {
+                if(i == (model.length - 1)){
+                    model[i] = null;
                 }else {
-                    data[i] = data[i+1];
+                    model[i] = model[i+1];
                 }
             }
             return true;
@@ -106,22 +106,22 @@ public class AplikasiTodoList {
     }
 
     public static void testRemoveTodoList(){
-        //dummy tambah data
+        //dummy tambah model
         addTodoList("Satu");
         addTodoList("Dua");
         addTodoList("Tiga");
         addTodoList("Empat");
         addTodoList("Lima");
 
-        //coba hapus data ke 20, karena diset 10;
+        //coba hapus model ke 20, karena diset 10;
         var result = removeTodoList(20);
         System.out.println(result);
 
-        //coba hapus data ke 4
+        //coba hapus model ke 4
         result = removeTodoList(7);
         System.out.println(result);
 
-        //coba hapus data ke 2
+        //coba hapus model ke 2
         result = removeTodoList(2);
         System.out.println(result);
 
@@ -131,8 +131,8 @@ public class AplikasiTodoList {
 
     public static String input(String info){
        System.out.print(info + ": ");
-       String data =  scanner.nextLine();
-       return data;
+       String model =  scanner.nextLine();
+       return model;
     }
 
     public static void testInput(){
