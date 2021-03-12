@@ -40,8 +40,8 @@ public class AplikasiTodoList {
      */
 
     private static void addTodoList(String todo) {
-        var isFull = true;
         // cek apakah model penuh
+        var isFull = true;
         for (int i = 0; i < model.length; i++) {
             if (model[i] == null) {
                 //model masiha ada yang kosong
