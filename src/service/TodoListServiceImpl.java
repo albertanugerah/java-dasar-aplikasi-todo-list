@@ -45,9 +45,9 @@ public class TodoListServiceImpl implements TodoListService{
         boolean success = todoListRepository.remove(number);
 
         if (success){
-            System.out.println("SUKSES MENGHAPUS TODO " + number);
+            System.out.println("SUKSES MENGHAPUS TODO :" + number);
         }else {
-            System.out.println("GAGAL MENGHAPUS TODO " + number);
+            System.out.println("GAGAL MENGHAPUS TODO :" + number);
         }
     }
 }
