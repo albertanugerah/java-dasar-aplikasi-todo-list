@@ -5,26 +5,29 @@ import repository.TodoListRepository;
 
 public class TodoListServiceImpl implements TodoListService{
 
+    //menambahkan attribute dari TodolistRepository
     private TodoListRepository todoListRepository;
 
+    //constructor untuk inject ke repository
     public TodoListServiceImpl(TodoListRepository todoListRepository) {
         this.todoListRepository = todoListRepository;
     }
 
     @Override
     public void showTodoList() {
-        //Todolist dari repository
+        // akses array mejadi akses repository
+        //model.length diganti mejadi model di repository, buat
         Todolist[] model = todoListRepository.getAll();
 
         System.out.println("To-Do List");
         //tambahkan ke posisi yang model array nya NUll
         for (int i = 0; i < model.length; i++) {
-            var todo = model[i];
+            var todolist = model[i];
             var no = i + 1;
 
             //check model
-            if (todo != null) {
-                System.out.println(no + ". " + todo);
+            if (todolist != null) {
+                System.out.println(no + ". " + todolist.getTodo());
             }
 
         }

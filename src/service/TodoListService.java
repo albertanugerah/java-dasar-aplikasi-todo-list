@@ -2,6 +2,7 @@ package service;
 
 public interface TodoListService {
     //method yang ditambahkan seesuai business logic
+//    dibuat untuk menampilkan data
     //parameter lihat dari aplikasiTodoList
 
     void showTodoList();
