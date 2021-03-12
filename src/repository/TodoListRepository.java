@@ -3,7 +3,7 @@ package repository;
 import entity.TodoList;
 
 public interface TodoListRepository {
-
+    //method yg ditambahkan seseuai business logic
     //get All data todo list
     TodoList[] getAll();
 
